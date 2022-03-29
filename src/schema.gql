@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  title: String!
+  description: String
+  user: User!
+  comment: [Comment!]
+}
+
+type Comment {
+  commentText: String!
+}
+
+type User {
+  username: String!
+  email: String!
+  post: [Post!]
+  comment: [Comment!]
+}
+
+type Query {
+  getUserPostByUserId(userId: getUserProjectByUserId!): User!
+}
+
+input getUserProjectByUserId {
+  userId: String!
+}
+
+type Mutation {
+  createUser(user: createUserInput!): User!
+  createPost(post: createPostInput!): Post!
+}
+
+input createUserInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input createPostInput {
+  title: String!
+  description: String!
+  userId: Float!
+}
